@@ -1,0 +1,19 @@
+current directory: /Users/stsessions/dev/verademos/verademo-rails-api/vendor/bundle/ruby/4.0.0/gems/debug-1.11.1/ext/debug
+/opt/homebrew/opt/ruby/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/stsessions/dev/verademos/verademo-rails-api/vendor/bundle/ruby/4.0.0/gems/debug-1.11.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20260708-57479-j2b4zm sitelibdir\=./.gem.20260708-57479-j2b4zm clean
+
+current directory: /Users/stsessions/dev/verademos/verademo-rails-api/vendor/bundle/ruby/4.0.0/gems/debug-1.11.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20260708-57479-j2b4zm sitelibdir\=./.gem.20260708-57479-j2b4zm
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.bundle
+
+current directory: /Users/stsessions/dev/verademos/verademo-rails-api/vendor/bundle/ruby/4.0.0/gems/debug-1.11.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20260708-57479-j2b4zm sitelibdir\=./.gem.20260708-57479-j2b4zm install
+/usr/bin/install -c -m 0755 debug.bundle ./.gem.20260708-57479-j2b4zm/debug
+
+current directory: /Users/stsessions/dev/verademos/verademo-rails-api/vendor/bundle/ruby/4.0.0/gems/debug-1.11.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20260708-57479-j2b4zm sitelibdir\=./.gem.20260708-57479-j2b4zm clean

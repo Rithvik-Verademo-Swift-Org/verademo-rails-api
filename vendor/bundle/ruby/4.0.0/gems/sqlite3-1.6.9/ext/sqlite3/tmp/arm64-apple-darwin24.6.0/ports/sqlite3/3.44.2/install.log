@@ -1,0 +1,15 @@
+ ././install-sh -c -d '/Users/stsessions/dev/verademos/verademo-rails-api/vendor/bundle/ruby/4.0.0/gems/sqlite3-1.6.9/ports/arm64-apple-darwin24.6.0/sqlite3/3.44.2/lib'
+ /bin/sh ./libtool   --mode=install /usr/bin/install -c   libsqlite3.la '/Users/stsessions/dev/verademos/verademo-rails-api/vendor/bundle/ruby/4.0.0/gems/sqlite3-1.6.9/ports/arm64-apple-darwin24.6.0/sqlite3/3.44.2/lib'
+libtool: install: /usr/bin/install -c .libs/libsqlite3.lai /Users/stsessions/dev/verademos/verademo-rails-api/vendor/bundle/ruby/4.0.0/gems/sqlite3-1.6.9/ports/arm64-apple-darwin24.6.0/sqlite3/3.44.2/lib/libsqlite3.la
+libtool: install: /usr/bin/install -c .libs/libsqlite3.a /Users/stsessions/dev/verademos/verademo-rails-api/vendor/bundle/ruby/4.0.0/gems/sqlite3-1.6.9/ports/arm64-apple-darwin24.6.0/sqlite3/3.44.2/lib/libsqlite3.a
+libtool: install: chmod 644 /Users/stsessions/dev/verademos/verademo-rails-api/vendor/bundle/ruby/4.0.0/gems/sqlite3-1.6.9/ports/arm64-apple-darwin24.6.0/sqlite3/3.44.2/lib/libsqlite3.a
+libtool: install: ranlib /Users/stsessions/dev/verademos/verademo-rails-api/vendor/bundle/ruby/4.0.0/gems/sqlite3-1.6.9/ports/arm64-apple-darwin24.6.0/sqlite3/3.44.2/lib/libsqlite3.a
+ ././install-sh -c -d '/Users/stsessions/dev/verademos/verademo-rails-api/vendor/bundle/ruby/4.0.0/gems/sqlite3-1.6.9/ports/arm64-apple-darwin24.6.0/sqlite3/3.44.2/bin'
+  /bin/sh ./libtool   --mode=install /usr/bin/install -c sqlite3 '/Users/stsessions/dev/verademos/verademo-rails-api/vendor/bundle/ruby/4.0.0/gems/sqlite3-1.6.9/ports/arm64-apple-darwin24.6.0/sqlite3/3.44.2/bin'
+libtool: install: /usr/bin/install -c sqlite3 /Users/stsessions/dev/verademos/verademo-rails-api/vendor/bundle/ruby/4.0.0/gems/sqlite3-1.6.9/ports/arm64-apple-darwin24.6.0/sqlite3/3.44.2/bin/sqlite3
+ ././install-sh -c -d '/Users/stsessions/dev/verademos/verademo-rails-api/vendor/bundle/ruby/4.0.0/gems/sqlite3-1.6.9/ports/arm64-apple-darwin24.6.0/sqlite3/3.44.2/include'
+ /usr/bin/install -c -m 644 sqlite3.h sqlite3ext.h '/Users/stsessions/dev/verademos/verademo-rails-api/vendor/bundle/ruby/4.0.0/gems/sqlite3-1.6.9/ports/arm64-apple-darwin24.6.0/sqlite3/3.44.2/include'
+ ././install-sh -c -d '/Users/stsessions/dev/verademos/verademo-rails-api/vendor/bundle/ruby/4.0.0/gems/sqlite3-1.6.9/ports/arm64-apple-darwin24.6.0/sqlite3/3.44.2/share/man/man1'
+ /usr/bin/install -c -m 644 sqlite3.1 '/Users/stsessions/dev/verademos/verademo-rails-api/vendor/bundle/ruby/4.0.0/gems/sqlite3-1.6.9/ports/arm64-apple-darwin24.6.0/sqlite3/3.44.2/share/man/man1'
+ ././install-sh -c -d '/Users/stsessions/dev/verademos/verademo-rails-api/vendor/bundle/ruby/4.0.0/gems/sqlite3-1.6.9/ports/arm64-apple-darwin24.6.0/sqlite3/3.44.2/lib/pkgconfig'
+ /usr/bin/install -c -m 644 sqlite3.pc '/Users/stsessions/dev/verademos/verademo-rails-api/vendor/bundle/ruby/4.0.0/gems/sqlite3-1.6.9/ports/arm64-apple-darwin24.6.0/sqlite3/3.44.2/lib/pkgconfig'
