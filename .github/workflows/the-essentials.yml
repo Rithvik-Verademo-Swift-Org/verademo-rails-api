@@ -1,0 +1,88 @@
+name: the-essentials
+on:
+  workflow_dispatch:
+jobs:
+  checkout-and-package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '4.0.5'
+          bundler-cache: true
+      - name: Install Veracode gem
+        run: bundle add veracode
+      - name: Package app with Veracode gem
+        run: bundle exec veracode prepare
+      - name: Save artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: scan-target
+          path: tmp/veracode-*.zip
+
+  upload-scan:
+    needs: checkout-and-package
+    runs-on: ubuntu-latest
+    container:
+      image: veracode/api-wrapper-java:latest
+      options: --user root
+    steps:
+      - name: Get artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: scan-target
+      - name: Debug
+        run: |
+          pwd
+          ls -l
+      - name: Scan
+        run: |
+          java -jar /opt/veracode/api-wrapper.jar \
+            -vid ${{ secrets.VERACODE_API_ID }} -vkey ${{ secrets.VERACODE_API_KEY }} \
+            -action UploadAndScan -appname "verademo-rails-api" -createprofile true \
+            -teams "coop-2026" \
+            -filepath veracode-*.zip -version "Github $GITHUB_RUN_NUMBER"
+
+  sca-scan:
+    needs: checkout-and-package
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '4.0.5'
+          bundler-cache: true
+      - name: Do SCA scan
+        env:
+          SRCCLR_API_TOKEN: ${{ secrets.SRCCLR_API_TOKEN }}
+        uses: veracode/veracode-sca@v2.1.12
+        with:
+          path: ./
+          create-issues: false
+      - name: Display SCA results
+        run: cat scaResults.txt
+
+  container-scan:
+    needs: checkout-and-package
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: 8
+      - name: Do container scan
+        uses: veracode/container_iac_secrets_scanning@v1.0.0
+        with:
+          vid: ${{ secrets.VERACODE_API_ID }}
+          vkey: ${{ secrets.VERACODE_API_KEY }}
+          command: "scan"
+          type: "directory"
+          source: "./"
+          format: "table"
