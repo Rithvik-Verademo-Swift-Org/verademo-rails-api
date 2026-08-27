@@ -7,6 +7,6 @@ RUN bundle install
 
 COPY . .
 
-EXPOSE 3000
+EXPOSE 16443
 
 CMD ["sh", "-c", "bin/rails db:migrate && bundle exec rails server -b 0.0.0.0 -p 16443"]
