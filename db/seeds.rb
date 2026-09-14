@@ -4,7 +4,7 @@ require 'digest/md5'
 puts "Loading demo data..."
 
 # Read SQL file from JavaScript version
-sql_file_path = Rails.root.join('..', 'verademo-javascript-api', 'db', '1_blab.sql')
+sql_file_path = Rails.root.join('db', '1_blab.sql')
 
 if File.exist?(sql_file_path)
   sql_content = File.read(sql_file_path)
@@ -33,7 +33,7 @@ else
   puts "Creating a test admin user instead..."
 
   # Fallback: create a simple admin user
-  admin_password = Digest::MD5.hexdigest('admin')
+  admin_password = Digest::MD5.hexdigest('admin').upcase
   timestamp = Time.now.strftime('%Y-%m-%d %H:%M:%S')
 
   ActiveRecord::Base.connection.execute(<<-SQL)
